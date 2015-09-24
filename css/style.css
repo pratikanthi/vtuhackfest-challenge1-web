@@ -123,6 +123,12 @@ html,body{
   width:180px;
   text-align:left;
   border-bottom:1px solid #ccc;
+  padding-bottom:10px;
+}
+
+
+.fancy-table tr>td{
+  border-bottom:1px solid #ccc;
 }
 
 td{
