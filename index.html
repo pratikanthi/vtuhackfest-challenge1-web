@@ -29,11 +29,13 @@
 
 });
 
+
+
   </script>
   </head>
-
   <body>
       <div class="container">
+
 
           <div class="sidebar">
               <center>
@@ -63,9 +65,15 @@
                 <a href="#"><p>Logout</p></a>
 
                 <div id="login-form" class="zoom-anim-dialog mfp-hide">
-                	<h1>Dialog example</h1>
-                	<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
-                </div>
+                	<h1>Validation Form</h1>
+                  <form name="loginform" onSubmit="return validateForm();" action="#login-form" method="post">
+                      <label>User name</label>
+                      <input type="text" name="usr" placeholder="username">
+                      <label>Password</label>
+                      <input type="password" name="pword" placeholder="password">
+                      <input type="submit" value="Login"/>
+                  </form>
+              </div>
 
           </div>
 
@@ -108,6 +116,7 @@
                     });
                 });
 
+
                 </script>
 
             </table>
@@ -122,5 +131,19 @@
 
 
   </body>
-
+  <script>
+  function validateForm() {
+      var un = document.loginform.usr.value;
+      var pw = document.loginform.pword.value;
+      var username = "username";
+      var password = "password";
+      if ((un == username) && (pw == password)) {
+          return true;
+      }
+      else {
+          alert ("Login was unsuccessful, please check your username and password");
+          return false;
+      }
+}
+  </script>
 </html>
