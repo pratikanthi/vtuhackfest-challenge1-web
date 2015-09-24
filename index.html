@@ -47,7 +47,7 @@
                  </span>
               </p>
 
-              <table class="fancy-table">
+              <table class="fancy-table" id="table">
 
                 <tr class="table-header">
 
@@ -59,9 +59,18 @@
 
                 </tr>
 
+
                 <script>
-                  $.getJSON("data.json", function(json) {
-                    console.log(json); // this will show the info it in firebug console
+                var myjson;
+                  $.getJSON("https://raw.githubusercontent.com/pratikanthi/vtuhackfest-challenge1-web/master/data.json", function(json) {
+
+                    myjson = json;
+
+                    myjson.forEach( function (item){
+
+                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td>"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
+
+                    });
                 });
 
                 </script>
