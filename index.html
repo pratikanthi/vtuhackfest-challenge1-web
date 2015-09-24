@@ -2,9 +2,34 @@
 <html>
   <head>
 
-      <title>Web Challenge</title>
+      <title>VTU Hackfest Web Challenge - 1</title>
       <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <link rel="stylesheet" type="text/css" href="css/dialog.css"/>
+      <link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
+
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+      <script>
+      $(document).ready(function() {
+	$('.popup-with-zoom-anim').magnificPopup({
+		type: 'inline',
+
+		fixedContentPos: false,
+		fixedBgPos: true,
+
+		overflowY: 'auto',
+
+		closeBtnInside: true,
+		preloader: false,
+
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in'
+	});
+
+});
+
+  </script>
   </head>
 
   <body>
@@ -14,7 +39,7 @@
               <center>
 
                     <img class="profile-picture" src="http://i.dailymail.co.uk/i/pix/2014/01/24/article-2545146-1AE7879100000578-793_634x681.jpg" height="150px">
-                    <h3>Angel</h3>
+                    <h3>Cersei Lannister</h3>
 
               </center>
 
@@ -34,8 +59,15 @@
                 <a href="#"><p>Profile</p></a>
                 <a href="#"><p>Payment</p></a>
                 <a href="#"><p>Free Rides<span style="float:right;color:#32b3d8">NEW!</span></p></a>
+                <a class="popup-with-zoom-anim" href="#login-form"><p>Validate<span style="float:right;color:#d83232">Admin! Click here</span></p></a>
                 <a href="#"><p>Logout</p></a>
-              </div>
+
+                <div id="login-form" class="zoom-anim-dialog mfp-hide">
+                	<h1>Dialog example</h1>
+                	<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.</p>
+                </div>
+
+          </div>
 
           </div>
 
@@ -83,6 +115,8 @@
           </div>
 
         </div>
+
+
 
 
 
