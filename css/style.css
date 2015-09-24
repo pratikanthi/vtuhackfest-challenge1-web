@@ -11,6 +11,14 @@ html,body{
   height:100%;
 }
 
+a{
+  text-decoration:none;
+  color:#333;
+}
+
+.menu p:hover{
+  background-color:#ccc;
+}
 .content-box,.sidebar{
   display:inline;
 }
@@ -82,6 +90,11 @@ html,body{
   padding-top:5px;
 }
 
+.profile-meta p:hover{
+  text-decoration:underline;
+  cursor:pointer;
+}
+
 .tick{
   height:16px;
   vertical-align:-2px;
@@ -118,6 +131,7 @@ html,body{
 
 .fancy-table{
   margin-top:60px;
+  margin-left:-40px;
 }
 
 
@@ -126,11 +140,13 @@ html,body{
   text-align:left;
   border-bottom:1px solid #ccc;
   padding-bottom:10px;
+  padding-left:30px;
 }
 
 
 .fancy-table tr>td{
   border-bottom:1px solid #ccc;
+  padding-left:30px;
 }
 
 td{
@@ -138,3 +154,13 @@ td{
   padding-top:20px;
   padding-bottom:20px;
 }
+
+.cancelled{
+  color:red;
+  font-size:10px;
+
+}
+
+
+
+/* lOGIN FORM */

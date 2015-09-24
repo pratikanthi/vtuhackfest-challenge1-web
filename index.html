@@ -31,10 +31,10 @@
 
               <div class="menu">
                 <p><b>My Trips</b></p>
-                <p>Profile</p>
-                <p>Payment</p>
-                <p>Free Rides<span style="float:right;color:#32b3d8">NEW!</span></p>
-                <p>Logout</p>
+                <a href="#"><p>Profile</p></a>
+                <a href="#"><p>Payment</p></a>
+                <a href="#"><p>Free Rides<span style="float:right;color:#32b3d8">NEW!</span></p></a>
+                <a href="#"><p>Logout</p></a>
               </div>
 
           </div>
@@ -68,7 +68,10 @@
 
                     myjson.forEach( function (item){
 
-                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td>"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
+                      if(item.fare==0){
+                        item.fare += '<br/><span class="cancelled">Canceled</span>';
+                      }
+                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td class='fare'>"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
 
                     });
                 });
@@ -78,7 +81,12 @@
             </table>
 
           </div>
-      </div>
+
+        </div>
+
+
+
+
   </body>
 
 </html>
