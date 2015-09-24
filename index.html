@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+
       <title>Web Challenge</title>
       <link rel="stylesheet" type="text/css" href="css/style.css"/>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   </head>
 
   <body>
@@ -10,8 +12,10 @@
 
           <div class="sidebar">
               <center>
+
                     <img class="profile-picture" src="http://i.dailymail.co.uk/i/pix/2014/01/24/article-2545146-1AE7879100000578-793_634x681.jpg" height="150px">
-                      <h3>Angel</h3>
+                    <h3>Angel</h3>
+
               </center>
 
               <p class="your-profile"><b>Your Profile</b><span style="float:right;margin-right:10px;">66%</span></p>
@@ -46,7 +50,7 @@
               <table class="fancy-table">
 
                 <tr class="table-header">
-                  
+
                   <th>Pickup</th>
                   <th>Driver</th>
                   <th>Fare</th>
@@ -54,57 +58,15 @@
                   <th>Payment Method</th>
 
                 </tr>
-                <tr>
 
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-                <tr>
-                  <td>09/14/15</td>
-                  <td>Satish</td>
-                  <td>158</td>
-                  <td>Bangalore</td>
-                  <td>****payt</td>
-                </tr>
-              </table>
+                <script>
+                  $.getJSON("data.json", function(json) {
+                    console.log(json); // this will show the info it in firebug console
+                });
+
+                </script>
+
+            </table>
 
           </div>
       </div>
