@@ -65,13 +65,16 @@
                 <a href="#"><p>Logout</p></a>
 
                 <div id="login-form" class="zoom-anim-dialog mfp-hide">
-                	<h1>Validation Form</h1>
+                	<h1><center>Validation Form</center></h1>
+                  <p>Enter your email and password and click validate</p>
                   <form name="loginform" onSubmit="return validateForm();" action="#login-form" method="post">
                       <label>User name</label>
                       <input type="text" name="usr" placeholder="username">
+                      <br/>
                       <label>Password</label>
                       <input type="password" name="pword" placeholder="password">
-                      <input type="submit" value="Login"/>
+                      <br/>
+                      <input type="submit" value="Validate"/>
                   </form>
               </div>
 
@@ -111,7 +114,7 @@
                       if(item.fare==0){
                         item.fare += '<br/><span class="cancelled">Canceled</span>';
                       }
-                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td class='fare'>"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
+                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td class='fare'>&#8377;"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
 
                     });
                 });
