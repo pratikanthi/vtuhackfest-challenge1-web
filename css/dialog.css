@@ -9,6 +9,27 @@
 }
 
 
+.zoom-anim-dialog input{
+	margin-top:20px;
+	font-size:20px;
+	width:50%;
+	padding:5px;
+
+}
+
+.zoom-anim-dialog input[type=text]{
+	color:#666;
+
+}
+
+.zoom-anim-dialog input[type="submit"]{
+	background-color:#d83232;
+	color:#fff;
+	border:none;
+	width:20%;
+	border-radius:20px;
+}
+
 /**
  * Fade-zoom animation for first dialog
  */
@@ -16,7 +37,7 @@
 /* start state */
 .my-mfp-zoom-in .zoom-anim-dialog {
 	opacity: 0;
-
+	font-family:'Droid Sans';
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;

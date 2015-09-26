@@ -126,33 +126,27 @@ a{
 }
 
 .content-box-header{
-
+  font-size:25px;  
+  display:inline-block;
 }
+
+
+/* Table Styles */
+
 
 .fancy-table{
   margin-top:60px;
   margin-left:-40px;
 }
 
-
-.fancy-table tr>th{
-  width:180px;
-  text-align:left;
+table tr{
   border-bottom:1px solid #ccc;
-  padding-bottom:10px;
-  padding-left:30px;
-}
 
-
-.fancy-table tr>td{
-  border-bottom:1px solid #ccc;
-  padding-left:30px;
 }
 
 td{
-  width:180px;
-  padding-top:20px;
-  padding-bottom:20px;
+  padding:20px
+
 }
 
 .cancelled{
@@ -160,7 +154,9 @@ td{
   font-size:10px;
 
 }
-
+.fare{
+  text-align:right;
+}
 
 
 /* lOGIN FORM */

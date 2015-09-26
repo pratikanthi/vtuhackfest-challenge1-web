@@ -3,28 +3,31 @@
   <head>
 
       <title>VTU Hackfest Web Challenge - 1</title>
+      <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
       <link rel="stylesheet" type="text/css" href="css/style.css"/>
       <link rel="stylesheet" type="text/css" href="css/dialog.css"/>
       <link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
+      <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
       <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
       <script>
+
       $(document).ready(function() {
-	$('.popup-with-zoom-anim').magnificPopup({
-		type: 'inline',
+	       $('.popup-with-zoom-anim').magnificPopup({
+        		type: 'inline',
 
-		fixedContentPos: false,
-		fixedBgPos: true,
+        		fixedContentPos: false,
+        		fixedBgPos: true,
 
-		overflowY: 'auto',
+        		overflowY: 'auto',
 
-		closeBtnInside: true,
-		preloader: false,
+        		closeBtnInside: true,
+        		preloader: false,
 
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in'
+        		midClick: true,
+        		removalDelay: 300,
+        		mainClass: 'my-mfp-zoom-in'
 	});
 
 });
@@ -65,17 +68,23 @@
                 <a href="#"><p>Logout</p></a>
 
                 <div id="login-form" class="zoom-anim-dialog mfp-hide">
-                	<h1><center>Validation Form</center></h1>
+                	<center><h1>Validation Form</h1>
                   <p>Enter your email and password and click validate</p>
-                  <form name="loginform" onSubmit="return validateForm();" action="#login-form" method="post">
-                      <label>User name</label>
-                      <input type="text" name="usr" placeholder="username">
-                      <br/>
-                      <label>Password</label>
-                      <input type="password" name="pword" placeholder="password">
-                      <br/>
-                      <input type="submit" value="Validate"/>
+                  <form method="post" action="" onsubmit="return val();">
+                      <div class="field">
+
+                              <input type="text" name="em" id="eml" placeholder="Email">
+                              <p id="email-error"></p>
+                      </div>
+                      <div class="field">
+                              <input type="password" name="pwd" id="pass" placeholder="Password">
+                              <div id="pass-error"></div>
+                      </div>
+                      <div class="field">
+                              <input type="submit" value="Validate">
+                      </div>
                   </form>
+                </center>
               </div>
 
           </div>
@@ -83,23 +92,20 @@
           </div>
 
           <div class="content-box">
-              <p class="top-strip">
-                 <span class="filter">Filter Trips</span>
-                 <span class="content-box-header">
-                   <center>MY TRIPS</center>
-                 </span>
-              </p>
+            <div class="top-strip">
+              <span class="filter"><i class="fa fa-sliders fa-rotate-90"></i>&nbsp;Filter Trips</span>
+              <center><h3 class="content-box-header">MY TRIPS</h3></center>
+            </div>
 
-              <table class="fancy-table" id="table">
+              <table width="100%" class="fancy-table" id="table">
 
-                <tr class="table-header">
-
-                  <th>Pickup</th>
-                  <th>Driver</th>
-                  <th>Fare</th>
-                  <th>City</th>
-                  <th>Payment Method</th>
-
+                <tr>
+                  <td></td>
+                  <td><b>Pickup</b></td>
+                  <td><b>Driver</b></td>
+                  <td class="fare"><b>Fare</b></td>
+                  <td><b>City<b></td>
+                  <td><b>Payment Method</b></td>
                 </tr>
 
 
@@ -114,7 +120,7 @@
                       if(item.fare==0){
                         item.fare += '<br/><span class="cancelled">Canceled</span>';
                       }
-                      document.getElementById('table').innerHTML += "<td>"+ item.pickup +"</td><td>"+ item.driver + "</td><td class='fare'>&#8377;"+ item.fare +"</td><td>"+ item.city +"</td><td>"+ item.method +"</td>";
+                      document.getElementById('table').innerHTML += "<td><span class='fa fa-chevron-right'></span></td><td> "+ item.pickup +"</td><td>"+ item.driver + "</td><td class='fare'>&#8377;"+ item.fare +"</td><td>"+ item.city +"</td><td><i class='fa fa-credit-card'></i>&nbsp;&#9679;&#9679;&#9679;payt</td>";
 
                     });
                 });
@@ -134,19 +140,31 @@
 
 
   </body>
-  <script>
-  function validateForm() {
-      var un = document.loginform.usr.value;
-      var pw = document.loginform.pword.value;
-      var username = "username";
-      var password = "password";
-      if ((un == username) && (pw == password)) {
-          return true;
-      }
-      else {
-          alert ("Login was unsuccessful, please check your username and password");
+  <script type="text/javascript">
+  function val(){
+      var e = document.getElementById('eml');
+      var p = document.getElementById('pass');
+      if(e.value=='' || e.value==null){
+        document.getElementById('email-error').innerHTML ="Please enter an email";
           return false;
       }
-}
+      if(p.value =='' || p.value == null){
+        document.getElementById('pass-error').innerHTML ="Please enter a password";
+          return false;
+      }
+      if(val_email(e.value)==false){
+        document.getElementById('email-error').innerHTML ="Not a valid email";
+          return false;
+      }
+      else
+        alert("Validated");
+  }
+  function val_email(email) {
+      var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+      return re.test(email);
+  }
+
+
   </script>
+
 </html>
